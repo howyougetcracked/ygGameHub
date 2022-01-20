@@ -1,11 +1,11 @@
 pcall(function()
-   if game:HttpGet("https://raw.githubusercontent.com/insanedude59/CheetoHub/main/"..game.PlaceId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/insanedude59/CheetoHub/main/"..game.PlaceId))()
+   if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.PlaceId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.PlaceId))()
     end 
 end)
 
 pcall(function()
-if game:HttpGet("https://raw.githubusercontent.com/insanedude59/CheetoHub/main/"..game.GameId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/insanedude59/CheetoHub/main/"..game.GameId))()
+if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.GameId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.GameId))()
     end
 end)

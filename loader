@@ -1,11 +1,11 @@
 pcall(function()
    if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.PlaceId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.PlaceId))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId))()
     end 
 end)
 
 pcall(function()
 if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.GameId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/loader"..game.GameId))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.GameId))()
     end
 end)

